@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gemba Concepts — Hinglish Script Pack, Episodes 1–3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --ink:#17231C;
+  --green:#4A9E6D;
+  --green-deep:#2E6647;
+  --rule:#DCE6DF;
+  --muted:#6B7C72;
+  --tint:#F3F8F4;
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light dark;
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --paper:#101613;
+    --ink:#E8EFE9;
+    --green:#6FBE8E;
+    --green-deep:#8FD3A9;
+    --rule:#26332C;
+    --muted:#93A69B;
+    --tint:#16201B;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101613;
+  --ink:#E8EFE9;
+  --green:#6FBE8E;
+  --green-deep:#8FD3A9;
+  --rule:#26332C;
+  --muted:#93A69B;
+  --tint:#16201B;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Poppins","Helvetica Neue",Arial,sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+
+nav{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:10;
+  background:var(--paper);
+  border-bottom:1px solid var(--rule);
+}
+.nav-inner{
+  max-width:60rem;margin:0 auto;
+  padding:.7rem 1.5rem;
+  display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;align-items:baseline;
+  font-size:.82rem;
+}
+.nav-inner b{font-weight:600;color:var(--green-deep);margin-right:.4rem}
+nav a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--green)}
+
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem 6rem}
+
+header.page{padding:4.5rem 0 2.5rem;max-width:34rem}
+header.page h1{
+  font-size:clamp(1.9rem,4.4vw,2.7rem);
+  font-weight:600;line-height:1.14;letter-spacing:-.02em;margin:0 0 1rem;
+}
+header.page p{font-size:1rem;line-height:1.65;color:var(--muted);margin:0 0 .8rem;max-width:32rem}
+
+.legend{
+  margin:2.2rem 0 0;padding:1.1rem 1.3rem;
+  background:var(--tint);border-left:3px solid var(--green);
+  font-size:.86rem;line-height:1.7;color:var(--muted);max-width:33rem;
+}
+.legend strong{color:var(--ink);font-weight:500}
+.legend p{margin:0 0 .8rem}
+.legend p:last-child{margin:0}
+
+article{border-top:1px solid var(--rule);padding-top:3.2rem;margin-top:4rem}
+.ep-num{font-size:.8rem;font-weight:500;color:var(--green);letter-spacing:.04em;margin:0 0 .6rem}
+article h2{
+  font-size:clamp(1.5rem,3.2vw,2.05rem);
+  font-weight:600;line-height:1.2;letter-spacing:-.015em;
+  margin:0 0 1.6rem;max-width:26ch;
+}
+dl.facts{
+  display:grid;grid-template-columns:8.5rem 1fr;gap:.45rem 1rem;
+  margin:0 0 3rem;font-size:.87rem;line-height:1.5;max-width:34rem;
+}
+dl.facts dt{color:var(--muted);font-weight:400}
+dl.facts dd{margin:0;font-weight:500}
+
+.cue{display:grid;grid-template-columns:7.5rem 1fr;gap:0 2.5rem;margin-bottom:2.6rem}
+.slug{border-top:1px solid var(--rule);padding-top:.55rem}
+.time{font-size:1.05rem;font-weight:500;color:var(--green);font-variant-numeric:tabular-nums;line-height:1.3}
+.slug span{display:block;font-size:.78rem;color:var(--muted);margin-top:.15rem;line-height:1.4}
+.speech{border-top:1px solid var(--rule);padding-top:.55rem;max-width:34rem}
+.speech h3{
+  font-size:1rem;font-weight:600;margin:0 0 1rem;color:var(--green-deep);
+  letter-spacing:-.005em;
+}
+.speech p{font-size:1.16rem;line-height:1.85;margin:0 0 1.15rem}
+.speech p:last-child{margin-bottom:0}
+.dir{color:var(--green);font-style:italic;font-size:.95rem}
+
+.swap{
+  border:1px dashed var(--green);background:var(--tint);
+  padding:1.2rem 1.3rem;margin:0 0 1.15rem;
+}
+.swap .swap-head{
+  font-size:.82rem;font-weight:500;color:var(--green-deep);
+  margin:0 0 .7rem;line-height:1.5;
+}
+.swap p{font-size:1.05rem;line-height:1.8;color:var(--muted);margin:0 0 .9rem}
+.swap p:last-child{margin-bottom:0}
+
+.notes{
+  margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+  max-width:34rem;font-size:.92rem;line-height:1.7;color:var(--muted);
+}
+.notes h4{font-size:.82rem;font-weight:500;color:var(--ink);margin:1.2rem 0 .5rem}
+.notes h4:first-child{margin-top:0}
+.notes p{margin:0 0 .7rem}
+.notes .pull{color:var(--green-deep);font-size:1.05rem;line-height:1.7;font-weight:500}
+
+footer{border-top:1px solid var(--rule);margin-top:4.5rem;padding-top:1.8rem;font-size:.86rem;color:var(--muted);line-height:1.7;max-width:34rem}
+footer p{margin:0 0 .9rem}
+
+@media (max-width:640px){
+  .wrap{padding:0 1.15rem 4rem}
+  header.page{padding:2.8rem 0 1.8rem}
+  .cue{grid-template-columns:1fr;gap:0}
+  .slug{border-top:1px solid var(--rule);padding-top:.5rem;display:flex;align-items:baseline;gap:.7rem;margin-bottom:.9rem}
+  .slug span{margin-top:0}
+  .speech{border-top:0;padding-top:0}
+  .speech p{font-size:1.09rem;line-height:1.8}
+  dl.facts{grid-template-columns:1fr;gap:.1rem}
+  dl.facts dd{margin-bottom:.6rem}
+}
+@media print{
+  nav{display:none}
+  body{background:#fff;color:#000}
+  article{page-break-before:always;border-top:0}
+  .cue{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <b>Hinglish script pack</b>
+    <a href="#ep1">1 — Plan dopahar tak</a>
+    <a href="#ep2">2 — OEE aur customer</a>
+    <a href="#ep3">3 — Nayi machine se pehle</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="page">
+  <h1>Teen solo scripts, Hinglish mein, mic ke liye</h1>
+  <p>Spotify plan se: Week 1 Episode A, Week 3 Episode A, Week 4 Episode B. Har ek 11–12 minute ka hai aaram se padhne pe. Thoda tez padhenge to 9–10 minute mein aa jayega.</p>
+  <p>Left column running time aur cue name hai — wo aapke aur editor ke liye hai, mic ke liye nahi.</p>
+
+  <div class="legend">
+    <p><strong>Language rules I followed.</strong> Roman script, kyunki aap English fluently padhte hain aur beech mein script badalna mic pe atkata hai. Devanagari chahiye to bata dijiye, convert kar doonga.</p>
+    <p><strong>English mein kya raha:</strong> saare technical words — plan, material, changeover, OEE, capacity, dispatch, quality release, shift, invoice — kyunki floor pe koi inka Hindi nahi bolta. Numbers bhi English mein: "eighty-two percent", "chaar hazaar" nahi.</p>
+    <p><strong>Hindi mein kya hai:</strong> baaki sab. Sawaal, kahani, emotion, aur wo lines jo yaad reh jaati hain.</p>
+    <p>Bracket ke andar <span class="dir">green italics</span> direction hai — bolna nahi hai. Dashed green blocks mein aapka apna shop-floor example jaayega; andar jo likha hai wo sirf length aur shape dikhane ke liye hai.</p>
+  </div>
+</header>
+
+<!-- ================= EPISODE 1 ================= -->
+<article id="ep1">
+  <p class="ep-num">POD-W1A · Week 1, Episode A</p>
+  <h2>Production Plan Dopahar Tak Kyun Toot Jaata Hai</h2>
+  <dl class="facts">
+    <dt>Running time</dt><dd>11:20 aaram se padhne pe</dd>
+    <dt>Companion asset</dt><dd>Production Readiness Score</dd>
+    <dt>Listener leaves with</dt><dd>Paanch-check readiness test, kal subah 8 baje se</dd>
+    <dt>Gemba view</dt><dd>Plan planning aur execution ke beech mein tootta hai</dd>
+  </dl>
+
+  <div class="cue">
+    <div class="slug"><div class="time">0:00</div><span>Cold open</span></div>
+    <div class="speech">
+      <p><span class="dir">[No music. Dry start, jaise baat chal rahi thi aur aap beech se bol rahe hain.]</span></p>
+      <p>Subah ke aath baj rahe hain. Din ka plan board pe laga hua hai. Line 2 pe chaar jobs, Line 4 pe teen, lunch ke baad ek changeover. Sabne dekh liya. Kisi ne kuch nahi bola.</p>
+      <p>Ab saade baarah baj gaye hain. Do jobs aage-peeche ho chuki hain, ek nikal gayi hai, aur changeover ab shaam chaar baje hoga.</p>
+      <p><span class="dir">[pause]</span> Aur dhyaan dijiye — kisi ne laparwahi nahi ki. Kisi ki galti nahi hai. Kal subah naya plan banega, aur kal bhi saade baarah baje yahi hoga.</p>
+      <p>Agle das minute isi pe. Aisa hota kyun hai. Aur kal subah se aap iska kya kar sakte hain.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">0:40</div><span>Identification + open loop</span></div>
+    <div class="speech">
+      <p>Ye hai <strong>[SHOW NAME]</strong>. Main Mohit. Main Gemba Concepts chalata hoon, aur mera zyada time shop floor pe hi jaata hai — ye dekhne mein ki plant jo karna chahta hai aur jo actually hota hai, dono ke beech kitna fasla hai. Hafte mein do episode, aath se baarah minute, ek baar mein ek problem.</p>
+      <p>Aur episode ke aakhir mein main aapko ek exercise doonga. Paanch din, roz das minute, kaagaz ka ek page. Ab tak maine ye kisi bhi plant mein clean wapas aate nahi dekha.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">1:15</div><span>Movement 1 — Plan ek dher hai vaadon ka</span></div>
+    <div class="speech">
+      <h3>Dikhta schedule hai, hai nahi</h3>
+      <p>Mere hisaab se production plan asal mein hai kya? Dekhne mein schedule lagta hai. Padhne mein bhi schedule lagta hai. Lekin schedule hai nahi.</p>
+      <p>Wo ek dher hai vaadon ka. Promises ka. Jo alag-alag log ek doosre se karte hain — bina bole, bina likhe.</p>
+      <p>Board pe se ek line uthaiye. Job A, Line 2, aath baje se ek baje tak. Ab dekhiye us ek line ke sach hone ke liye kitni cheezein sach honi chahiye.</p>
+      <p>Material wahan hona chahiye. System mein nahi — physically, line pe, sahi quantity, sahi batch, quality se released.</p>
+      <p>Machine available honi chahiye. Aur available ka matlab "kharab nahi hai" nahi hota. Matlab set up hai, tooling lagi hai, pichhla job utar chuka hai.</p>
+      <p>Aadmi hona chahiye. Headcount nahi — wo operator jo is job ko rate pe chala sakta hai, us shift mein, aaj ke din.</p>
+      <p>Quality ko clear karna hai, us speed se jo plan ne chupchaap maan li thi. First piece approval, in-process checks, jo bhi aapka process maangta hai.</p>
+      <p>Aur priority paanch ghante tak nahi hilni chahiye. Sales ka phone nahi. Customer escalation nahi. Koi ye na bole — "bas ye ek daal do, urgent hai."</p>
+      <p><span class="dir">[thoda dheere — yahi is section ka point hai]</span> Ye paanch vaade hue. Plan ki <em>ek</em> line mein. Aur normal din mein bees-tees lines hoti hain us board pe. Hisaab aap khud laga lijiye. Har vaada alag-alag bilkul reasonable hai. Lekin sabko ek saath, ek hi subah, sach hona padta hai.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">3:20</div><span>Movement 2 — Readiness aur availability alag cheez hai</span></div>
+    <div class="speech">
+      <h3>Do shabd jinko hum ek maan lete hain</h3>
+      <p>Aaj ka shabd hai <strong>readiness</strong>. Aur main isko ek doosre shabd se alag karna chahta hoon, jisko hum aksar ek hi samajh lete hain — <strong>availability</strong>.</p>
+      <p>Availability system ka jawab hai. Readiness floor ka jawab hai. Aur inke beech ka jo gap hai, wahi aapki subah kha jaata hai.</p>
+      <p>Material. System kehta hai four thousand pieces available hain. Readiness poochhti hai — kaunsa batch, kis location pe, kis quality status mein, aur line tak pahunchne mein kitna lagega? Agar wo far bay mein hai aur uske upar teen pallet rakhe hain — <span class="dir">[pause]</span> to available hai, ready nahi hai.</p>
+      <p>Machine. Machine breakdown mein nahi hai. Readiness poochhti hai — tooling chadhi hai? Die aa gaya? Pichhla job utra? Fixture sahi wala hai?</p>
+      <p>Aadmi. Attendance ninety-two percent hai. Readiness poochhti hai — jo banda <em>is</em> job ko <em>is</em> line pe rate pe chala sakta hai, wo aaj aaya hai ya nahi?</p>
+      <p>Quality. Kuch hold pe nahi hai. Readiness poochhti hai — aaj first piece approval mein kitna time lagega, sign kaun karega, aur wo aath baje floor pe hoga ya nahi?</p>
+      <p>Priority. Plan approved hai. Readiness poochhti hai — kal shaam approve hone ke baad se ab tak kuch badla to nahi?</p>
+      <p>Ab ek baat dhyaan dijiye. In paanchon ka jawab sirf haan ya na hai. Aur aapke floor pe koi na koi aath baje ye paanchon jawab jaanta hai. Bas usse koi poochh nahi raha, aur kahin likha nahi jaa raha.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">5:30</div><span>Movement 3 — Aapka example</span></div>
+    <div class="speech">
+      <div class="swap">
+        <p class="swap-head">Yahan aapka apna shop-floor example — anonymised, lagbhag 45 second. Neeche jo hai wo sirf shape aur length dikha raha hai, bolne ke liye nahi.</p>
+        <p>Pichhle saal ek plant mein tha. Mid-size, chaar lines, apne segment mein sab unki izzat karte hain. Log bhi achhe. Plan din mein teen-chaar baar badal raha tha, aur ab kisi ko mehsoos bhi nahi hota tha — jaise compressor ki awaaz sunai dena band ho jaati hai.</p>
+        <p>Mujhe ek cheez ne roka. Supervisor ki diary. Chhoti si notebook thi, aur wo notebook sahi thi. Board sahi nahi tha. Wo kuch chhupa nahi raha tha — usne bas doosra planning system bana liya tha, kyunki pehle wale pe nau baje ke baad bharosa nahi kiya jaa sakta tha.</p>
+        <p>Humne koi process nahi badla. Bas do hafte likha — aath baje job ready thi ya nahi. Teen mein se lagbhag ek nahi thi. Aur jo nahi thi, unme machine ki problem na ke barabar thi.</p>
+      </div>
+      <p><span class="dir">[Specific rakhein. Client ka naam nahi, aur sector bhi nahi agar sector se pehchaan ho jaaye.]</span></p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">6:45</div><span>Movement 4 — Replanning free nahi hai</span></div>
+    <div class="speech">
+      <h3>Wo cost jo kisi report mein nahi aati</h3>
+      <p>Ab aati hai sabse mehngi baat. Aur ye aapke plant ki kisi bhi report mein nahi dikhti.</p>
+      <p>Gyarah baje jab plan tootta hai, to sirf job nahi jaati. Aap replan karte hain. Aur replanning ki keemat hai.</p>
+      <p>Supervisor ka dhyaan jaata hai — jo aapke plant ki sabse kam available cheez hai. Ek ghanta replanning matlab ek ghanta line pe nahi.</p>
+      <p>Sequence jaata hai. Jo jobs aap aage-peeche karte hain, wo aksar us changeover logic ko tod deti hain jo kisi ne soch ke banaya tha — colour sequence, grade sequence, cleaning sequence. Yaani ab ek extra changeover ka paisa aap de rahe hain, jo aapne design mein hataya tha.</p>
+      <p>Material jaata hai, kyunki jo job aapne aage khinchi uska material kisi ne stage nahi kiya tha.</p>
+      <p>WIP badhta hai. Aadha hua job side mein chala jaata hai. Agle din thanda hoke wapas aata hai, aur phir se set karna padta hai.</p>
+      <p><span class="dir">[pause]</span> Aur sabse aakhir mein bharosa jaata hai. Ye wala compound hota hai. Jab plan din mein chaar baar badalta hai, log chupchaap plan ke hisaab se sochna band kar dete hain. Supervisor apni list banane lagta hai. Stores wahi stage karta hai jo supervisor bolta hai, jo board bolta hai wo nahi. Maintenance window pe bharosa karna chhod deta hai.</p>
+      <p>Aur phir aapke plant mein do planning system chalne lagte hain. Ek official — board pe. Ek asli — kisi ke dimaag mein. <span class="dir">[slower]</span> Asli wala kaam karta hai, isliye zinda hai. Lekin uska audit nahi ho sakta, use doosri line pe copy nahi kar sakte, aur jis din wo aadmi retire hoga — wo system gate se bahar chala jaayega.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">8:55</div><span>Movement 5 — Teen sawaal</span></div>
+    <div class="speech">
+      <h3>Teen sawaal — management table ke liye</h3>
+      <p>To main aapko teen sawaal deke jaata hoon. Team ke liye nahi — management table ke liye.</p>
+      <p>Ek. Aaj ke plan ka kitna percent aath baje sach mein ready tha? Available nahi. Ready. Material line pe, machine set, operator hazir, quality clear, priority wahi ki wahi. Agar room mein koi bhi iska number nahi bata paata — to bas, yahi is hafte ki finding hai.</p>
+      <p>Do. Aaj plan kisne badla, aur kis basis pe? Galti nikalne ke liye nahi. Ye jaanne ke liye ki aapke paas decision ka <em>rule</em> hai, ya sirf decision ki <em>aadat</em> hai.</p>
+      <p>Teen. Aap plan adherence naapte bhi hain, ya sirf output? Kyunki plant mahine ka number bana sakta hai, aur uska planning system roz toot bhi sakta hai — dono ek saath. Mahine ka number usko chhupa leta hai. Aur overtime aur expediting uska bill bhar dete hain.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">10:05</div><span>The Gemba view</span></div>
+    <div class="speech">
+      <p><span class="dir">[Dheere. Ye episode ki thesis line hai.]</span></p>
+      <p>Plan planning department mein nahi tootta, aur machine pe bhi nahi tootta. Wo dono ke beech — interface pe tootta hai. Aur jo cheez dikhti nahi, usko sudhara nahi jaa sakta. Isiliye hum jo bhi kaam shuru karte hain, wo readiness ko dikhane se shuru hota hai — process badalne se pehle.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">10:35</div><span>Exercise</span></div>
+    <div class="speech">
+      <p>Ab wo exercise, jo maine shuru mein promise ki thi. Paanch din. Roz das minute.</p>
+      <p>Kal subah aath baje, apni sabse busy line ki pehli teen jobs lijiye. Har job pe paanch sawaal — material, machine, aadmi, quality, priority. Haan ya na. Pandrah jawab, ek kaagaz pe.</p>
+      <p>Kuch theek mat kijiye. Koi project announce mat kijiye. Sirf likhiye.</p>
+      <p>Paanch din mein pachhattar data points ban jaayenge. Aur maine aaj tak ye clean wapas aate nahi dekha. Jo cheez logon ko chaunkati hai wo "na" ki ginti nahi hoti — wo hoti hai ki "na" kahan aa rahi hai. Zyadatar plant machine ke expectation se jaate hain, aur material aur approvals dekh ke wapas aate hain.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">11:10</div><span>Asset, teaser, sign-off</span></div>
+    <div class="speech">
+      <p>Iska structured version chahiye to humne <strong>Production Readiness Score</strong> banaya hai — wahi paanch check, scoring sheet ke saath, taaki aap lines aur hafte compare kar sakein, sirf andaaza na lagayein. Free hai, gembaconcepts.com pe hai, link show notes mein.</p>
+      <p><span class="dir">[Teaser — thoda tez, curiosity ke liye]</span> Agle episode mein hum ek level neeche jaayenge. Ek shift mein four hundred and eighty minutes hote hain. Wo jaate kahan hain? Soch ke rakhiyega — kyunki jawab aapko pasand nahi aayega.</p>
+      <p>Main Mohit. Gemba pe milte hain.</p>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h4>Show notes copy</h4>
+    <p>Har production plan andar se vaadon ka dher hai — material, machine, aadmi, quality aur priority ke. Mohit batate hain ki ye vaade dopahar tak kyun toot jaate hain, replanning asal mein kitni mehngi padti hai, aur wo paanch sawaal jo kal subah aath baje poochhne hain.</p>
+    <p>Free Production Readiness Score: gembaconcepts.com</p>
+    <h4>Reel / audiogram pull quote</h4>
+    <p class="pull">"Agar material far bay mein hai aur uske upar teen pallet rakhe hain — to wo available hai, ready nahi hai."</p>
+  </div>
+</article>
+
+<!-- ================= EPISODE 2 ================= -->
+<article id="ep2">
+  <p class="ep-num">POD-W3A · Week 3, Episode A</p>
+  <h2>OEE Aapko Ye Nahi Batata Ki Customer Tak Order Pahuncha Ya Nahi</h2>
+  <dl class="facts">
+    <dt>Running time</dt><dd>11:35 aaram se padhne pe</dd>
+    <dt>Companion asset</dt><dd>OEE-to-Dispatch Blind Spot Map</dd>
+    <dt>Listener leaves with</dt><dd>Do numbers jo OEE ke bagal mein rakhne hain</dd>
+    <dt>Gemba view</dt><dd>Poore system ko naapiye, department-wise nahi</dd>
+  </dl>
+
+  <div class="cue">
+    <div class="slug"><div class="time">0:00</div><span>Cold open</span></div>
+    <div class="speech">
+      <p>Pichhle mahine aapka OEE tha eighty-two percent. Aur on-time delivery thi seventy-one percent. <span class="dir">[pause]</span></p>
+      <p>Dono numbers sahi hain. Dono imaandaar logon ne sahi formula se nikale hain. Aur dono ek hi factory ki bilkul alag-alag kahani suna rahe hain.</p>
+      <p>Aaj baat isi gap pe. Kyunki jitne bhi plants mein main jaata hoon, delivery ki shikayat wahin se aati hai — usi gap se.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">0:30</div><span>Identification</span></div>
+    <div class="speech">
+      <p>Ye hai <strong>[SHOW NAME]</strong>. Main Mohit, Gemba Concepts se. Aur shuru mein hi saaf kar doon — ye OEE pe hamla nahi hai. Main khud use karta hoon, achha metric hai. Bas usse aisa sawaal poochha jaa raha hai, jiske liye wo bana hi nahi tha.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">1:00</div><span>Movement 1 — OEE dekhta kya hai</span></div>
+    <div class="speech">
+      <h3>Machine ka sach</h3>
+      <p>Pehle ye clear kar lein ki OEE karta kya hai. Wo teen sawaal poochhta hai — ek machine ke baare mein, ek time window ke andar.</p>
+      <p>Machine chali jab chalni chahiye thi? Us speed pe chali jis speed pe chalni chahiye thi? Aur jo bana wo spec mein tha? Availability, performance, quality. Teenon ka guna kar dijiye — OEE mil gaya.</p>
+      <p>Ab dhyaan dijiye frame ke andar kya hai. Ek machine, aur thoda sa time. Aur frame ke bahar kya hai — machine se pehle ka sab kuch. Machine ke baad ka sab kuch. Aur do machines ke beech ka sab kuch.</p>
+      <p><span class="dir">[dheere]</span> OEE machine ka sach hai. Delivery poore system ka vaada hai. Hum machine ke sach se system ka sawaal poochh rahe hain — aur phir hairaan hote hain ki jawab customer ki baat se match nahi karta.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">2:40</div><span>Movement 2 — Aakhri machine ke baad</span></div>
+    <div class="speech">
+      <h3>Order ke saath-saath chaliye</h3>
+      <p>Chaliye ek order ke peeche chalte hain — line se utarne ke baad. Ye wo hissa hai jo kisi OEE number mein nahi hai.</p>
+      <p>Aakhri piece ban gaya. Job close ho gayi. Aapki OEE report ke hisaab se ye order ab successful hai. <span class="dir">[pause]</span> Ab aage dekhiye.</p>
+      <p>Quality release ka wait. Documentation. Labelling, palletising. Forklift ka wait. Finished goods store tak movement. Put-away — aur location system mein chadhi, ya nahi chadhi. Baad mein picking. Checking. Packing. Staging. Invoice, e-way bill. Vehicle placement — aaj shaam, ya kal subah. Loading. Gate out.</p>
+      <p>Ginn lijiye. Barah-terah step hain, plant ke hisaab se. Ab imaandaari se bataiye — inme se kitne steps ka cycle time naapa hua hai? Jitne plants mein main jaata hoon, jawab hota hai ek ya do. Baaki sab achhe log kar dete hain. "Ho jaata hai."</p>
+      <p>Aur "ho jaata hai" pe ghadi nahi lagi hoti. Bahut saare plants mein production complete se gate out tak ka time us order ke manufacturing time se zyada hota hai. Aur ye number kisi ka nahi hai — kyunki wo chaar departments ke beech mein padta hai. Wo khaali jagah ka hai. Aur khaali jagah pe hum kisi ko baithate nahi.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">4:45</div><span>Movement 3 — Achhe local numbers, late order</span></div>
+    <div class="speech">
+      <h3>Har department pass, customer fail</h3>
+      <p><span class="dir">[Thoda ruk ke, seedha]</span> Ab wo baat jo zyadatar plants ko pasand nahi aati. Strong department metrics delivery problem ko rokte to hain hi nahi — kabhi-kabhi wo khud paida karte hain.</p>
+      <p>Sabse common example lijiye. Aapko OEE badhana hai. Changeover OEE ko girata hai. To aap changeover kam kar dete hain — campaign chalate hain. Pehle ek grade poora, phir doosra. OEE badh jaata hai. Sach mein badhta hai, imaandaari se naapa hua. Team tareef ki haqdaar hai.</p>
+      <p>Lekin customer ne campaign mein order nahi kiya tha. Jis customer ko week one wala grade chahiye tha, uske yard mein ab teen hafte ka stock pada hai. Aur jise week four wala grade chahiye, wo week one se wait kar raha hai. Aapka OEE sudhra, aur OTIF bigad gaya. Aur dono team apne-apne number ke hisaab se sahi hain.</p>
+      <p>Aur yahi shakal har jagah dikhti hai. Stores ko stock accuracy pe naapa jaata hai, to material rack mein saaf-suthra pada rehta hai, line pe stage nahi hota. Quality ko escapes pe naapa jaata hai, to jo release do ghante mein ho sakti thi wo ek din leti hai. Dispatch ko freight cost per tonne pe naapa jaata hai, to gaadi full load ka wait karti hai — aur aapka order uske saath wait karta hai.</p>
+      <p>Har department rational hai. Har incentive apni jagah sahi hai. Aur order phir bhi late hai.</p>
+      <p><span class="dir">[dheere — ye line land karni hai]</span> Jab har department pass ho raha ho aur customer fail ho raha ho — to problem mehnat ki nahi hai. Problem ye hai ki handoffs koi naap hi nahi raha. Aur order apni zindagi ka zyada hissa handoff mein hi guzaarta hai.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">7:00</div><span>Movement 4 — Aapka example</span></div>
+    <div class="speech">
+      <div class="swap">
+        <p class="swap-head">Yahan aapka example — lagbhag 45 second. Best shape: achha OEE, naaraz customer.</p>
+        <p>Ek plant ke saath kaam kiya tha jinhone do saal mein OEE low sixties se high seventies tak pahunchaya tha. Asli mehnat, asli discipline, koi dikhawa nahi. Aur unhi do saalon mein delivery complaints badh gayi thi.</p>
+        <p>Humne tees orders pe timestamps daale. Manufacturing time average lagbhag dedh din. Production complete se gate out tak — chaar din. Aur un chaar dinon mein order ko haath lagbhag chhe ghante laga.</p>
+        <p>Us building mein koi kaam chor nahi tha. Wo chaar din bas kisi ko dikhte nahi the, kyunki kisi ek aadmi ki report mein donon ends nahi the.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">8:15</div><span>Movement 5 — Do numbers add kijiye</span></div>
+    <div class="speech">
+      <h3>OEE rakhiye. Bagal mein do number rakhiye.</h3>
+      <p>Main ye nahi keh raha ki OEE hata dijiye. Rakhiye, aur usi kaam ke liye use kijiye jiske liye wo hai — machine sudhaarne ke liye. Bas uske bagal mein do number aur rakhiye, usi review mein, unhi logon ke saamne.</p>
+      <p>Pehla — <strong>order-to-dispatch elapsed time</strong>. Production complete se gate out tak. Clock time, working hours nahi — customer Sunday ko ginna band nahi karta. Median dekhiye, aur worst ten percent bhi dekhiye. Kyunki customer ko aap worst ten percent se yaad rehte hain.</p>
+      <p>Doosra — <strong>touch ratio</strong>. Us poore elapsed time mein se kitni der koi aadmi sach mein us order pe kaam kar raha tha? Zyadatar plants mein ye twenty percent se neeche nikalta hai. Aur jis din aap management ko dikhate hain ki production ke baad ka eighty percent time sirf intezaar hai — us din baat hi badal jaati hai. Kyunki intezaar sasta hai theek karna. Usme capital nahi lagta. Usme sirf ek rule lagta hai — kaun, kya, kab.</p>
+      <p>Aur teesra, agar lena chahein: OTIF lane-wise ya customer-wise dekhiye, plant average nahi. Seventy-one percent ka average kholenge to aksar milta hai — zyadatar lanes ninety pe, aur do lanes thirty pe. Do lanes theek ki jaa sakti hain. Average theek nahi kiya jaa sakta.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">10:15</div><span>The Gemba view</span></div>
+    <div class="speech">
+      <p>Poore operating system ko end to end naapiye — department by department nahi. Jo number machine pe ruk jaata hai, wo aapko kabhi nahi batayega ki customer tak order pahuncha ya nahi. Aur customer aapko hamesha poori chain pe number deta hai, sirf machine pe nahi.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">10:40</div><span>Exercise</span></div>
+    <div class="speech">
+      <p>Is hafte ki exercise. Pichhle mahine ke wo paanch dispatch nikaliye jinpe customer ne complaint ki thi.</p>
+      <p>Har ek pe chhe timestamp likhiye. Production complete. Quality release. Put-away. Pick. Invoice. Gate out. Chhe time, paanch order — tees data points. Aur ye lagbhag poora aapke system mein pehle se hai. Bas aaj tak kisi ne ek line pe rakha nahi.</p>
+      <p>Phir steps mat dekhiye — gaps dekhiye. Steps aksar theek hi hote hain. Poora mahina gaps mein gaya hota hai.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">11:15</div><span>Asset, teaser, sign-off</span></div>
+    <div class="speech">
+      <p>Ready format chahiye to humne <strong>OEE-to-Dispatch Blind Spot Map</strong> banaya hai — aakhri machine se gate out tak ka poora raasta, aur wo points pehle se marked jahan time gayab hota hai. Free hai, gembaconcepts.com pe.</p>
+      <p>Agle episode mein ek aur cheez jo report mein nahi dikhti — do batch ke beech ka time. Wo bhi capacity hai, aur aksar sabse sasti capacity hai.</p>
+      <p>Main Mohit. Gemba pe milte hain.</p>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h4>Show notes copy</h4>
+    <p>OEE ek machine ko, ek time window mein naapta hai. Delivery poore system ka vaada hai. Mohit ek order ke peeche chalte hain — aakhri machine se gate tak — aur dikhate hain ki OEE badhne ke baad bhi on-time delivery kaise gir sakti hai. Saath mein do number jo agle review mein OEE ke bagal mein rakhne hain.</p>
+    <p>Free OEE-to-Dispatch Blind Spot Map: gembaconcepts.com</p>
+    <h4>Reel / audiogram pull quote</h4>
+    <p class="pull">"Do lanes theek ki jaa sakti hain. Average theek nahi kiya jaa sakta."</p>
+  </div>
+</article>
+
+<!-- ================= EPISODE 3 ================= -->
+<article id="ep3">
+  <p class="ep-num">POD-W4B · Week 4, Episode B</p>
+  <h2>Nayi Machine Kharidne Se Pehle, Wo Factory Dhoondhiye Jiske Paise Aap De Chuke Hain</h2>
+  <dl class="facts">
+    <dt>Running time</dt><dd>11:30 aaram se padhne pe</dd>
+    <dt>Companion asset</dt><dd>Capacity Before Capex Test</dd>
+    <dt>Listener leaves with</dt><dd>Chaar sawaal, capex note upar jaane se pehle</dd>
+    <dt>Gemba view</dt><dd>Capital decision operational sach ke baad aata hai, pehle nahi</dd>
+  </dl>
+
+  <div class="cue">
+    <div class="slug"><div class="time">0:00</div><span>Cold open</span></div>
+    <div class="speech">
+      <p>Demand badh gayi hai. Team keh rahi hai plant full capacity pe hai. Sales ko agle quarter ka commitment chahiye. Aur saamne jawab rakha hua hai — nayi machine le lo.</p>
+      <p>Note sign karne se pehle ek sawaal. <span class="dir">[pause]</span> Aapke plant ne ek shift mein maximum kitna banaya hai — kabhi bhi? Nameplate wali rated capacity nahi. Jo sach mein bana hai, ek asli din pe, aapke hi material aur aapke hi logon ke saath.</p>
+      <p>Wo number jo bhi ho — uske paise aap pehle hi de chuke hain.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">0:35</div><span>Identification</span></div>
+    <div class="speech">
+      <p>Ye hai <strong>[SHOW NAME]</strong>. Main Mohit, Gemba Concepts se. Ye episode thoda kam plant head ke liye hai, aur thoda zyada us aadmi ke liye jo capital note pe sign karta hai — waise jawab aksar plant head ke paas hi hota hai.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">1:00</div><span>Movement 1 — Do capacity</span></div>
+    <div class="speech">
+      <h3>Installed capacity aur demonstrated capacity</h3>
+      <p>Har factory mein do capacity number hote hain. Aur wo dono kabhi ek nahi hote.</p>
+      <p>Pehla hai <strong>installed capacity</strong>. Machine supplier se aata hai, thoda engineering team adjust kar deti hai. Cycle time, into available minutes, into number of machines. Ye arithmetic ka number hai, aur iska ek hi kaam hai — physical ceiling batana.</p>
+      <p>Doosra hai <strong>demonstrated capacity</strong>. Yaani plant ne sach mein kitna banaya hai — asli conditions mein, asli din pe, aapke material, aapke log, aapka product mix. Ye model nahi hai. Ye historical fact hai. Aur aap aaj dopahar apne production records se nikaal sakte hain.</p>
+      <p>Ab wo number jo main kisi bhi capital discussion ki pehli slide pe chahta hoon. Pichhle baarah mahine ki apni best shift lijiye. Unhi baarah mahine ki average shift lijiye. Ghata dijiye.</p>
+      <p><span class="dir">[dheere]</span> Wo gap theory nahi hai. Consultant ka model nahi hai. Wahi plant, wahi machine, wahi log — bas do alag din. Aur wo gap, seedhe shabdon mein, wo factory hai jiske paise aap pehle hi de chuke hain. Aapne kharidi hai. Aap uspe depreciation chala rahe hain. Log rakhe hain, bijli de rahe hain, insurance bhar rahe hain. Bas zyadatar dinon mein wo aapko mil nahi rahi.</p>
+      <p>Jin plants ke saath maine kaam kiya hai, ye gap fifteen percent se kam bahut kam milta hai, aur aksar thirty se upar hota hai. Nayi machine pe kharch karne se pehle, itna to pata hona chahiye ki aapka gap kitna hai.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">3:15</div><span>Movement 2 — Wo farak chhupta kahan hai</span></div>
+    <div class="speech">
+      <h3>Chhe jagah — aur unme se sirf ek machine hai</h3>
+      <p>To ye farak jaata kahan hai? Chhe jagah. Aur ek bhi glamorous nahi hai.</p>
+      <p>Downtime — jo likha jaata hai wo bhi, aur jo nahi likha jaata wo bhi. Wo chhe-chhe minute ke stops jo koi log nahi karta kyunki reporting threshold se chhote hain. Ek mahine ke chhe-minute stops jodh ke dekhiye, phir tay kijiye ki wo mayne nahi rakhte.</p>
+      <p>Changeover. Standard wala number nahi. Aapka asli number — wall clock pe, last good piece se next good piece full rate pe. Phir standard se compare kijiye. Zyadatar plants ka standard kabhi sach tha.</p>
+      <p>Waiting. Material ka, aadmi ka, approval ka, instruction ka, forklift ka, decision ka. Ye aksar sabse bada bucket hota hai — aur isi ko theek karne mein sabse kam paisa lagta hai.</p>
+      <p>Quality losses. Rework, re-inspection, hold ke baad ka dheema restart, wo batch jo asal mein do baar ban jaata hai.</p>
+      <p>Sequence aur mix. Jobs ko aise order mein chalana ki aap un changeovers ka paisa dein jo bachaye jaa sakte the.</p>
+      <p>Aur flow. Stages ke beech pada WIP, bottleneck jo product ke hisaab se jagah badalta hai, ek downstream step jo upstream ko bhooka rakhta hai.</p>
+      <p><span class="dir">[pause]</span> Ab is list pe ek nazar daaliye. Chhe mein se sirf ek machine ke baare mein hai. Aap machine kharidne ki soch rahe hain — ek aisi problem ke liye jo chhe mein se paanch baar machine ki problem hai hi nahi.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">5:25</div><span>Movement 3 — Kab kharidna sahi hai</span></div>
+    <div class="speech">
+      <h3>Main ye nahi keh raha ki machine kabhi mat kharidiye</h3>
+      <p>Main is baat pe imaandaar rehna chahta hoon. Kai baar kharidna bilkul sahi hota hai, aur der karna hi mehngi galti hoti hai.</p>
+      <p>Kharidiye jab technology ki asli limit aa gayi ho — naya product aisi tolerance, size ya process maangta ho jo aapki current machine physically de hi nahi sakti.</p>
+      <p>Kharidiye jab aapki demonstrated capacity, aapke sabse achhe dinon pe bhi, firm demand se kam ho. Agar best-ever shift bhi order book cover nahi karti, to improvement se ye gap band nahi hoga.</p>
+      <p>Kharidiye jab ek hi machine bade revenue ke liye single point of failure ho. Wahan aap output nahi, risk cover kharid rahe hain — aur note mein wahi likhiye.</p>
+      <p>Aur kharidiye jab improvement ka raasta sahi ho lekin us commitment ke liye dheema ho jo aap customer ko de chuke hain. Par tab aankhein khuli rakh ke kharidiye, aur improvement ka kaam saath mein chalta rehne dijiye. Warna aap wahi losses dobara kharidenge — bas nayi machine ke saath.</p>
+      <p>Jiske khilaaf main hoon wo ye hai — capacity ko <em>pehla</em> jawab bana lena, isse pehle ki kisi ne naapa ho ki maujooda machine sach mein karti kya hai. Kyunki machine akeli nahi aati. Uske saath installation aati hai, commissioning aati hai, learning curve aata hai, aur log, maintenance, spares, floor space, aur WIP. <span class="dir">[slower]</span> Aur agar asli constraint material availability ya changeover tha — to ab ek ki jagah do machine material ka intezaar karengi.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">7:45</div><span>Movement 4 — Aapka example</span></div>
+    <div class="speech">
+      <div class="swap">
+        <p class="swap-head">Yahan aapka example — lagbhag 45 second. Best shape: ek capex decision jo ruka, naapa gaya, aur phir behtar hua.</p>
+        <p>Ek plant mein doosri line ka board note taiyaar ho raha tha. Demand sach mein badhi thi, koi problem bana nahi raha tha.</p>
+        <p>Humne teen hafte naapne mein lagaye. Unka best mahina, per shift, average mahine se lagbhag thirty percent upar tha. Aur us gap mein zyadatar do hi cheezein thi — changeover standard se lagbhag double chal raha tha, aur har break ke baad pehle ghante ka restart loss, jise aaj tak kisi ne ghadi laga ke naapa hi nahi tha.</p>
+        <p>Unhone line cancel nahi ki. Do quarter aage badha di, us gap ka zyadatar hissa wapas le liya — aur jab kharidi, tab original note se chhoti machine kharidi.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">9:00</div><span>Movement 5 — Chaar sawaal</span></div>
+    <div class="speech">
+      <h3>Chaar sawaal, note upar jaane se pehle</h3>
+      <p>To chaar sawaal — capital note upar jaane se pehle.</p>
+      <p>Ek. Hamari demonstrated capacity kya hai, aur wo aakhri baar kab achieve hui thi? Agar jawab "March" hai — to poochhiye March mein alag kya tha. Wo jawab aksar free hota hai, aur aksar kisi supervisor ke paas rakha hota hai.</p>
+      <p>Do. Average din pe demonstrated capacity chhoone ke liye kya badalna padega? Best case nahi — average din. Aur usko likhiye: actions ki list, har action ke saamne ek naam.</p>
+      <p>Teen. Us badlav ka kharcha kitna hai, aur time kitna lagega? Ab isko imaandaari se machine se compare kijiye — machine ke commissioning time ko bhi jodiye, jo log aksar bhool jaate hain. Barah hafte ka improvement plan, versus nau mahine ka capital cycle — ye bilkul alag discussion hai us discussion se jo zyadatar boards kar rahe hote hain.</p>
+      <p>Aur chaar — is pe main zid karunga. Agar hum machine kharid lete hain aur aaj ke saare losses jahan hain wahin rehte hain, to hume asal mein milega kya? Ye hisaab laga ke dekhiye. Pandrah minute lagenge. Aur poori discussion mein isse saaf karne wala koi doosra number nahi hai.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">10:35</div><span>The Gemba view</span></div>
+    <div class="speech">
+      <p>Capital decision operational sach ke <em>baad</em> aana chahiye, pehle nahi. Order mayne rakhta hai — pehle naapiye, phir tay kijiye. Bina naape hue loss ke upar kharidi gayi machine aapko usi problem ka bada version de deti hai — bas ab uske saath ek lambi depreciation schedule bhi judi hoti hai.</p>
+    </div>
+  </div>
+
+  <div class="cue">
+    <div class="slug"><div class="time">11:00</div><span>Exercise, asset, sign-off</span></div>
+    <div class="speech">
+      <p>Is hafte ka kaam ek dopahar ka hai. Apni constraint line ka baarah mahine ka shift-wise output nikaliye. Best shift dhoondhiye. Average nikaliye. Percentage gap nikaaliye — aur bas wo ek number agli management meeting mein le jaaiye. Explanation abhi mat le jaaiye. Sirf number rakhiye, aur room ko react karne dijiye.</p>
+      <p>Structured version chahiye to <strong>Capacity Before Capex Test</strong> hai — demonstrated versus installed ka calculation aur chhe loss buckets, aise format mein jo aap capital note ke saath attach kar sakte hain. Free hai, gembaconcepts.com pe.</p>
+      <p>Main Mohit. Gemba pe milte hain.</p>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h4>Show notes copy</h4>
+    <p>Har factory mein do capacity hoti hai — ek nameplate pe, aur ek jo sach mein bani hai. Best shift aur average shift ka gap wo factory hai jiske paise aap pehle hi de chuke hain. Mohit batate hain ye gap chhupta kahan hai, machine kharidna kab sach mein sahi hai, aur wo chaar sawaal jo capex note upar jaane se pehle poochhne hain.</p>
+    <p>Free Capacity Before Capex Test: gembaconcepts.com</p>
+    <h4>Reel / audiogram pull quote</h4>
+    <p class="pull">"Agar asli constraint material tha — to ab ek ki jagah do machine material ka intezaar karengi."</p>
+  </div>
+</article>
+
+<footer>
+  <p><strong>Sign-off:</strong> "Main Mohit. Gemba pe milte hain." Teeno episodes mein same rakha hai. Chaar-paanch episode ke baad log isi line se show pehchaanne lagenge — isliye ise badliye mat, chahe baaki sab badal dijiye.</p>
+  <p><strong>Recording se pehle teen cheezein set karni hain:</strong> show ka naam, jo har episode mein [SHOW NAME] ki jagah aayega; teen shop-floor observations jo dashed blocks mein jaayenge; aur ye ki asset link landing page pe jaayega ya seedhe download pe — closing wording thodi badlegi.</p>
+</footer>
+
+</div>
+</body>
+</html>
